@@ -130,7 +130,17 @@ computed hash, mode 4 is better at that
 
 
 # Manage Storage in Linux Environment
+
 ## 16. Understanding GPT and MBR
+- MBR - Master Boot Record
+  * Old system
+  * Supports disks up to 2 TB and can have 4 partitions (without using extended partitions)
+- Protective MBR - The blank device that prevents older BIOS systems from assuming a GPT drive
+- GPT - GUID Partition table 
+  * New system 
+  * Supports much more space and partitions
+  * Stores multiple copies around the disk for redundancy, has CRC for error checking, making it more robust
+
 
 ## 17. Filesystem Hierarchy
 
