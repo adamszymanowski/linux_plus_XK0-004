@@ -143,8 +143,31 @@ computed hash, mode 4 is better at that
 
 
 ## 17. Filesystem Hierarchy
+- `/` everything starts on **root directory**
+- virtual filesystem
+  - `/proc`, `/sys` belongs here
+  - dynamic files/pseudofiles that are managed by kernel
+- remote filesystem
+  - NFS, SMB, or other
+  - mounted on actual filesystem
+
+- `tree` program to show tree structure of directory
+- `ls -a`
+
+used for relative paths
+- `..` parent directory
+- `.` current directory
+-  `~` shortcut for **home** directory
+
+Just remember this:
+*Linux has just one big monolithic filesystem.*
 
 ## 18. Creating Partitions
+- `parted` partition editor
+- `gparted` graphical partition editor
+- `lsblk`
+- `cat /proc/partitions`
+- `fdisk` (for older systems)
 
 ## 19. Formatting a Partition with Various Filesystems
 
