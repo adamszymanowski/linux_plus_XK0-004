@@ -170,8 +170,40 @@ Just remember this:
 - `fdisk` (for older systems)
 
 ## 19. Formatting a Partition with Various Filesystems
+File systems
+- `ext`
+ * most common
+ * mature
+ * later versions support journaling
+- `xfs`
+ * older
+ * still used by CentOS (and has its own set of tools)
+- `btrfs`
+ * new, but not widely used
+- dos
+  - `ntfs`
+  - `vfat`
+  - `fat32`
+
+Making filesystems
+- `mkfs.*` (hit tab twice to list specific tool)
 
 ## 20. Mounting Partitions Manually and at Boot
+You can mount only on **empty folder**.
+
+Ways of mounting
+- manually
+  * `mount`
+  * `umount` for unmountig
+- on boot
+  * edit `/etc/fstab`
+    - file structure:
+      * `file system` UUID or device (eg. `/dev/sda1`)
+      * `mount point` directory to mount
+      * `type` filesystem (eg. `ext4`)
+      * `options` use `defaults` for default config
+      * `dump` deprecated, use 0
+      * `pass` integrity check, root `/` directory should be 1, others (if needed) 2, 3...
 
 ## 21. Checking and Scanning Linux Filesystems
 
