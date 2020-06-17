@@ -203,13 +203,33 @@ Ways of mounting
       * `type` filesystem (eg. `ext4`)
       * `options` use `defaults` for default config
       * `dump` deprecated, use 0
-      * `pass` integrity check, root `/` directory should be 1, others (if needed) 2, 3...
+      * `pass` integrity check, root `/` directory should be 1, others (if needed) 2, for no check use 0
 
 ## 21. Checking and Scanning Linux Filesystems
+Steps to determine whether scan or not on boot
+- check `/etc/fstab` if the pass is set to 1 or 2
+  * scan if true
+- check if the current mount count is higher than the allowed maximum count (if maximum count is -1 DO NOT scan)
+  * scan if true
+- boot system and mount partitions
+
+Tool `tune2fs` allows to get/set the filesystem parameters (including maximum allowed count)
+
+root `/` directory cannot be scanned manually after the boot.
+For manual scanning boot the (other) system from USB/CD and use `fsck` on root `/` directory
 
 ## 22. Understanding LVM
+Physical Volumes (**PV**) are groupped in Volume Group (**VG**) which acts like a big 'chunk' 
+from which you 'carve out' Logical Volumes (**LV**) formatted with File Systems (**FS**).
+
+- `pvdisplay`
+- `lvdisplay`
 
 ## 23. Creating an LVM System
+- `pvcreate`
+- `vgcreate`
+- `lvcreate`
+
 
 ## 24. RAID Levels
 
