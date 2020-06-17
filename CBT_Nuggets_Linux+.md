@@ -230,11 +230,20 @@ from which you 'carve out' Logical Volumes (**LV**) formatted with File Systems 
 - `vgcreate`
 - `lvcreate`
 
+A physical volume can *NOT* be larger than the volume group it's a part of.
 
 ## 24. RAID Levels
+- RAID 0 (stripe)
+- RAID 1 (mirror)
+- RAID 5
+- RAID 6
 
 ## 25. Configuring RAID Array with mdadm
-
+- `mdadm` tool for creating RAID
+ * Example: `mdadm --create --verbose /dev/md0 --level=5 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sde1 /dev/sde1`
+- `cat /proc/mdstat` for RAID info
+- `mdadm --detail --scan` RAID config
+- `mdadm --detail --scan > /etc/mdadm/mdadm.conf` Save RAID config (to work on boot)
 
 
 # Compare and Contrast Virtualization Concepts
