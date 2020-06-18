@@ -246,4 +246,30 @@ A physical volume can *NOT* be larger than the volume group it's a part of.
 - `mdadm --detail --scan > /etc/mdadm/mdadm.conf` Save RAID config (to work on boot)
 
 
+
 # Compare and Contrast Virtualization Concepts
+
+## 26. Identifying Virtual Machines and Containers
+- virtual machines require hypervisors that run virtualized hardware that run full operating systems inside them
+- containers run on operating systems themselves have their own isolated file system and run isolated processes
+
+Oversimplification
+- VMs - isolated OSes
+- containers - isolated processes
+
+## 27. Virtual Machine Templates
+- OVF - Open Virtualization Format - files that describe VM
+ * HD images
+ * RAM requirements
+ * Network requirements
+ * and so on...
+- OVA - Open Virtualization Appliance - OVF files archived with tar
+ * basically a one .tar file renamed to .ova
+
+## 28. Understanding Virtual Machine Networking
+
+## 29. Understanding Virtualization Storage Options
+
+## 30. Identifying Linux Virtualization Tools
+
+## 31. Bootstraping Linux Instalation
