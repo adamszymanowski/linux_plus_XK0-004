@@ -267,9 +267,43 @@ Oversimplification
  * basically a one .tar file renamed to .ova
 
 ## 28. Understanding Virtual Machine Networking
+- Networks - virtualized, but still acts like real
+ * bridged 
+  - shares connection with the host
+  - on the same network with the host
+ * NAT
+  - just like connection in your home
+  - host acts like a router 
+ * local/host
+  - not connected at all to external network 
+  - isolated network
+  - *ALTHOUGH* one of the VMs can have two (different) network connections, it's called
+   * **dual-homed** - has two NICs
+    - one is connected to local/host network
+    - second is connected to external network (acts as bridge)
 
 ## 29. Understanding Virtualization Storage Options
+- provisioning - reserving space on host storage
+ - thin - grows as needed
+ - thick - all at once
+
+- persistent volume - exists even if we destroy VM
+- blobs - storage through API, not a direct storage
 
 ## 30. Identifying Linux Virtualization Tools
+- KVM - Kernel Virtualization Module
+- libvirt - indirect layer between KMV and management tool
+- virsh/virt-manager - management tools
+ * `virsh` is CLI
+ * `virt-manager` is GUI
 
 ## 31. Bootstraping Linux Instalation
+"From CD-rom to fully installed and configured system"
+
+Installation configuration files that "do" all the interaction during installation.
+- CentOS - kickstart file to Anaconda installer
+- Debian - preseed, but also kickstart file
+
+Cloud-init 
+- bare-bones intstall from cloned image 
+- then on initial boot runs customization scripts
