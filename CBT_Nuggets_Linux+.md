@@ -238,6 +238,8 @@ A physical volume can *NOT* be larger than the volume group it's a part of.
 - RAID 5
 - RAID 6
 
+NOTE: (add flash cards to the topis above)
+
 ## 25. Configuring RAID Array with mdadm
 - `mdadm` tool for creating RAID
  * Example: `mdadm --create --verbose /dev/md0 --level=5 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sde1 /dev/sde1`
@@ -274,7 +276,7 @@ Oversimplification
  * NAT
     - just like connection in your home
     - host acts like a router 
- * local/host
+ * local/private/host-only
     - not connected at all to external network 
     - isolated network
     - *ALTHOUGH* one of the VMs can have two (different) network connections, it's called
@@ -283,9 +285,9 @@ Oversimplification
         - second is connected to external network (acts as bridge)
 
 ## 29. Understanding Virtualization Storage Options
-- provisioning - reserving space on host storage
- - thin - grows as needed
- - thick - all at once
+- provisioning - reserving space on host's storage
+ - thin - but using as much as needed, and growing to the needs
+ - thick - but all at once upfront
 
 - persistent volume - exists even if we destroy VM
 - blobs - storage through API, not a direct storage
@@ -340,6 +342,75 @@ Cloud-init
 - UTF - Unicode Transformation Format
   * A way to encode Unicode for computers
 
-  - `locale` - environnmet variable containing locale detais
-  - `localectl` - manage locale
+  - `locale` - get locale-specific information
+  - `localectl` - Control the system locale and keyboard layout settings
     * after changes in locale, you have to log out and back in to reestablish environment variables
+
+  
+NOTE: (Add flash cards to the topisc below)
+# Install, Update, and Configure Software
+
+## 34. Installing Tarballs
+Three step process
+1. Extract
+  - `tar -zxvf stuff.tar.gz`
+  - `cd ./stuff`
+2. Compile
+  - `make` (usually)
+3. Install, it depends, either:
+  - `make install`
+  - run script, E.g. `./install.sh`
+  - move to appropreate directory E.g. `/usr/local/bin`
+
+## 35. Managaing .deb Packages
+- `apt`
+  * newer
+  * simple
+  * **USE THIS**
+- `aptitude`
+  * older
+  * still works
+  * **DON'T USE**
+- `apt-get`
+  * *oldest*
+  * still works
+  * **DON'T USE**
+
+- `dpkg`
+  * actual installer, but doesn't resolve dependencies
+
+- `apt update` updates packages repositories, usyally you must run this before installation
+
+## 36. Managing .rpm Packages
+- YUM - Yellowdog Updater Modifier
+  * handles dependencies
+  * updates repo when installing/uprgading, *no need* for doing it manually, like in `apt`
+- DNF - DaNdiFied YUM (really!)
+  * in Fedora, will replace YUM
+- RPM - RPM Package manager
+  * low level tool, but doesn't handle dependencies
+
+## 37. Configuring APT Repositories
+Add repositories to this file:
+- `/etc/apt/sources.list`
+Then you need to update `apt`
+- `apt update`
+but you need to add the GPG key too, for security reasons or else won't work (there will be errors), E.g.
+- `wget -qO- https://deb.opera.com/archive.key | apt-key add -`
+- `apt-key list` to list GPG keys
+Update with added key wil succeed
+- `apt update`
+
+Adding repositories throug PPA, E.g.
+- `add-apt-repository ppa:webupd8team/atom`
+* it adds repository, GPG key and update the sources all at once
+
+## 38. Configuring YUM Repositiories
+- `/etc/yum.conf`
+- `/etc/yum.repos.d/` folder with individual files in `<file>.repo`
+- add repo
+- edit config
+
+## 39. Identifying Non-RPM and Non-APT Package Managers
+- Arch Linux - `pacman`
+- OpenSUSE - `zypper`
