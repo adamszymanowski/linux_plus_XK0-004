@@ -259,28 +259,28 @@ Oversimplification
 
 ## 27. Virtual Machine Templates
 - OVF - Open Virtualization Format - files that describe VM
- * HD images
- * RAM requirements
- * Network requirements
- * and so on...
+  * HD images
+  * RAM requirements
+  * Network requirements
+  * and so on...
 - OVA - Open Virtualization Appliance - OVF files archived with tar
- * basically a one .tar file renamed to .ova
+  * basically a one .tar file renamed to .ova
 
 ## 28. Understanding Virtual Machine Networking
 - Networks - virtualized, but still acts like real
- * bridged 
-  - shares connection with the host
-  - on the same network with the host
+  * bridged 
+    - shares connection with the host
+    - on the same network with the host
  * NAT
-  - just like connection in your home
-  - host acts like a router 
+    - just like connection in your home
+    - host acts like a router 
  * local/host
-  - not connected at all to external network 
-  - isolated network
-  - *ALTHOUGH* one of the VMs can have two (different) network connections, it's called
-   * **dual-homed** - has two NICs
-    - one is connected to local/host network
-    - second is connected to external network (acts as bridge)
+    - not connected at all to external network 
+    - isolated network
+    - *ALTHOUGH* one of the VMs can have two (different) network connections, it's called
+      * **dual-homed** - has two NICs
+        - one is connected to local/host network
+        - second is connected to external network (acts as bridge)
 
 ## 29. Understanding Virtualization Storage Options
 - provisioning - reserving space on host storage
@@ -294,16 +294,52 @@ Oversimplification
 - KVM - Kernel Virtualization Module
 - libvirt - indirect layer between KMV and management tool
 - virsh/virt-manager - management tools
- * `virsh` is CLI
- * `virt-manager` is GUI
+  * `virsh` is CLI
+  * `virt-manager` is GUI
 
 ## 31. Bootstraping Linux Instalation
 "From CD-rom to fully installed and configured system"
 
 Installation configuration files that "do" all the interaction during installation.
-- CentOS - kickstart file to Anaconda installer
-- Debian - preseed, but also kickstart file
+- CentOS - **Kickstart** file to **Anaconda** installer
+- Debian - **Preseed**, but also kickstart file
 
 Cloud-init 
 - bare-bones intstall from cloned image 
 - then on initial boot runs customization scripts
+
+
+
+# Configure Localization Options
+
+## 32. Configuring Clocks and Timezones
+- same thing
+ * Hardware clock
+ * Real Time Clock (RTC)
+ * CMOS clock
+
+- same time, not the same thing
+  * UTC - Coordinated Universal Time - Standard, not a time zone
+  * GMT - Greenwich Mean Time - Time zone that has the same time as UTC
+
+  Usually hardware clock is set as UTC, then system tmie is set accordingly to time zone.
+  - `date`
+  - `timedatectl` - shows the details about local time, universal time, rtc time, and time zone (also NTP and others)
+  - `ls -l /etc/localtime` - shows symbolic link to timezone
+  - `ln -s /usr/share/zoneinfo/America/New_York` - set time zone (`rm /etc/localtime` first)
+
+## 33. Configuring Language and Localization Options
+- ASCII - American Standard for Computer Information Interchange
+  * 7 bits
+  * 128 characters
+  * English language
+- Unicode
+  * characters for almost all languages
+  * rules of rendering
+  * rules of encoding
+- UTF - Unicode Transformation Format
+  * A way to encode Unicode for computers
+
+  - `locale` - environnmet variable containing locale detais
+  - `localectl` - manage locale
+    * after changes in locale, you have to log out and back in to reestablish environment variables
