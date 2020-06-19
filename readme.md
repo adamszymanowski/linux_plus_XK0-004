@@ -16,6 +16,7 @@ TODO: Expand ont this and fill actual references
 
 # Reminder for silly me
 ```
+git remote add origin git@github:adamszymanowski/linux_plus_XK0-004.git
 git remote add origin https://github.com/adamszymanowski/linux_plus_XK0-004.git
 git push -u origin master
 ```
