@@ -500,3 +500,35 @@ Exact locations depend on the distribution, options in **bold** are most likely.
   - and also
     - `/home/user/.bashrc`
 
+
+
+# Create, Modify, and Redirect Files
+
+## 46. Chosing a Text Editor
+- `nano`
+- `vi`
+
+## 47. Using More, Less, Head, Tail
+- `more`
+- `less`
+- `head`
+- `tail`
+
+## 48. Searching for Lines of Text with Grep
+These two are equivalent
+- `grep -F word ./file`
+- `cat ./file | grep -F word`
+
+## 49. STDIN, STDOUT, adn STDERR
+
+## 50. Understainding Output Redirection Tricks and Tools
+
+## 51. Understanding Text Manipulation with Command-Line Tools
+
+## 52. Text Processing with Awk and Sed
+
+## 53. Using Hard Links and Soft (Symbolic) Links
+
+## 54. Find and Locate
+
+## 55. Copying Files Over the Network
