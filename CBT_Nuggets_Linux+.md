@@ -414,3 +414,89 @@ Adding repositories throug PPA, E.g.
 ## 39. Identifying Non-RPM and Non-APT Package Managers
 - Arch Linux - `pacman`
 - OpenSUSE - `zypper`
+
+
+
+# Managing Users and Groups
+
+## 40. Managing Local Users
+- `adduser`
+  * takes care of all the details that you would have to explicitly pass to `useradd`
+
+Lower level tools for managing users
+- `useradd`
+- `usermod`
+- `userdel`
+
+## 41. Managing Local Groups
+- primary - same as username (this group is used when E.g. creating a file)
+- secondary/supplementary
+
+- `groups <user>` - lists all the groups user belongs to
+
+Lower level tools for managing groups
+- `groupadd`
+- `groupmod`
+- `groupdel`
+
+## 42. Querying User Accounts
+- `whoami` - on what account you're currently logged in
+- `who` - shows who is logged in
+- `w`- shows who is logged in and what they are doing
+- `pinky` - print user information
+- `id` - print user and its group ids
+- `last` -  listing of last logged users
+
+## 43. Managing Group and Password File
+- `/etc/passwd` - user info is stored here (E.g. home directories), but not passwords, every one has access to it, *encrypted passwords are no longer stored in here* (it used to be this way), everyone has acces to this file
+- `/etc/shadow` - user encrypted passwords are stored in here **only root** user can access it
+
+See permissions with `ls -l /etc/passwd/` and `ls -l /etc/shadow/`
+
+Same thing with groups, althoug groups rarely have password
+- `/etc/group`
+- `/etc/gshadow`
+
+Edit password or group files with these commands
+- `sudo vipw`
+- `sudo vipgr`
+And shadow files with these
+- `sudo vipw -s`
+- `sudo vipgr -s`
+
+## 44. Configuring User and Group Quotas
+In `/etc/fstab` disk must have `usrquota` parameter added.
+If enabled, run these command to check.
+- `sudo quotacheck -au`
+- `ls /mnt/disk/`
+
+Setting quota:
+- `quotaon -a`
+-  `edquota <username>`
+You can set it either on :
+- **blocks** (size) or 
+- **inodes** (number of files)
+limits:
+* soft limit - warning
+* hard limit - can't write new files
+
+Writing empty files:
+`dd if=/dev/zero of=/file1 bs=1k count=400` - this will write 400kb empty file
+
+## 45. Identyfing User Profiles
+Exact locations depend on the distribution, options in **bold** are most likely.
+- All Users
+  * one or ohter - profile setting for shell
+    * `/etc/bash.bashrc`
+    * `/etc/bashrc`
+  - and also
+    - `/etc/profile` - login shell
+    - `/etc/environment/` - environment variables on login
+
+- Individual
+  * one or other
+    * `/home/user/.profile`
+    * `/home/user/.bash_profile`
+  - and also
+    - `/home/user/.bashrc`
+
