@@ -520,8 +520,25 @@ These two are equivalent
 - `cat ./file | grep -F word`
 
 ## 49. STDIN, STDOUT, adn STDERR
+- STDIN
+  * `<`
+  * `|`
+- STDOUT
+  * `>`
+- STDERR
+  * `2>`
 
 ## 50. Understainding Output Redirection Tricks and Tools
+- `/dev/null`
+  * bit bucket, black hole
+  * `echo "Hello" > /dev/null`
+  * `ls jnkewr > /dev/null 2>&1`
+- `tee`
+  * writes to flie and STDOUT
+  * `cat file.txt | tee copy.txt`
+- `xargs`
+  * build and execute from STDIN
+  * `cat file.txt | xargs mkdir` - will create folders based on file.txt list
 
 ## 51. Understanding Text Manipulation with Command-Line Tools
 
