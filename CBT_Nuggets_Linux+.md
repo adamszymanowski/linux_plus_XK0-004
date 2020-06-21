@@ -541,8 +541,14 @@ These two are equivalent
   * `cat file.txt | xargs mkdir` - will create folders based on file.txt list
 
 ## 51. Understanding Text Manipulation with Command-Line Tools
+- `sort` - sorts output
+- `wc` - word count
+- `cut` - cut sections from lines
+- `paste` - merge lines of files
 
 ## 52. Text Processing with Awk and Sed
+- `sed` - steram editor
+- `awk` - Aho, Weinberger, Kerighan
 
 ## 53. Using Hard Links and Soft (Symbolic) Links
 
