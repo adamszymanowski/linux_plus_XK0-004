@@ -551,7 +551,51 @@ These two are equivalent
 - `awk` - Aho, Weinberger, Kerighan
 
 ## 53. Using Hard Links and Soft (Symbolic) Links
+Files are referenced in file allocation table to actual file location on hard drive.
+- soft link 
+  * reference in allocation table to allocation table itself where it references actual file location on hard drive.
+  * i.e link to another **inode**
+  * i.e. point to another filename on the file system (?)
+  * they break when the file is moved
+
+- hard link 
+  * new reference in allocation table but pointing to file location (duplicated reference)
+  * i.e. link to the same **inode**
+  * they don't break, but they take space
+
+A demo:
+  ```
+  pushd ~
+  echo "Hey, a file!" > file.txt
+  ln -s file.txt soft_linked.txt
+  ls -lai *.txt
+  cat soft_linked.txt
+  mv file.txt /Documents
+  ls -lai *.txt
+  cat soft_linked.txt
+  ln /Documents/file.txt hard_linked.txt
+  ls -lai *.txt
+  cat hard_linked.txt
+  mv /Documents/file.txt .
+  ls -lai *.txt
+  cat hard_linked.txt
+  cat soft_linked.txt
+  ```
 
 ## 54. Find and Locate
+- `find`
+  * searches 'live', not fastest, but can find anything
+  * E.g. `find / -name *MyFile* 2> /dev/null`
+  * since it searches everywhere it can, there might be *Permission denied* errors, hence redirecting STERR to `/dev/null` to superss error messages
+
+- `locate`
+  * uses cache so it's super fast
+  * cache is updated once a day, but cna be updated by `updatedb`
 
 ## 55. Copying Files Over the Network
+- `ssh` - secure shell - remote connection
+- `scp` - secure copy
+  * uses `ssh` to copy
+  * `scp <source> <target>`
+  * either *source* and *target* can be specified as `user@hostmane:/path`
+- `rsync` - more advanced remote copying
