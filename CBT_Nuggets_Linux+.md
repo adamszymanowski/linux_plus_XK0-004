@@ -599,3 +599,17 @@ A demo:
   * `scp <source> <target>`
   * either *source* and *target* can be specified as `user@hostmane:/path`
 - `rsync` - more advanced remote copying
+
+
+
+# Manage Local Services
+
+## 56. Managing System Services with Systemctl
+- `systemctl`
+  * `systemctl status <service>`
+  * on boot:
+    * `systemctl enable <service>`
+    * `systemctl disable <service>`
+  * now
+    * `systemctl start <service>`
+    * `systemctl stop <service>`
