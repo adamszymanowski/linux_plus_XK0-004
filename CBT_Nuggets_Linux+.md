@@ -613,3 +613,38 @@ A demo:
   * now
     * `systemctl start <service>`
     * `systemctl stop <service>`
+
+## 57. Managing Runlevels with SysV
+This is generally not used now (but still sometimes).
+- `runlevel`
+- `telinit`
+- `/etc/inittab`
+
+level | Debian/Ubuntu    | CentOS/SUSE
+------|------------------|------------
+0     | halt             | halt
+1     | single user mode | single user mode
+2     | full multi user  | multi user, no net
+3     | nothing          | multi user, with net
+4     | nothing          | *not used*
+5     | nothing          | Multi user GUI
+6     | reboot           | reboot
+
+## 58. Managing Targets with SystemD
+Compairson between SysV and SystemD
+
+runlevel | Boot target
+---------|------------
+0        | poweroff
+1        | rescue
+3        | multi-user
+5        | graphical
+6        | reboot
+
+- `systemctl get-default`
+- `systemctl set-default multi-user.target`
+- `systemctl isolate multi-user`
+
+## 59. Managing Services with SysV
+
+## 60. Managing Services with SystemD
