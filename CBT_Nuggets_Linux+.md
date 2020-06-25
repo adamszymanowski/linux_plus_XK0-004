@@ -646,5 +646,21 @@ runlevel | Boot target
 - `systemctl isolate multi-user`
 
 ## 59. Managing Services with SysV
+- `/etc/init.d/`
+- `service`
+  * E.g `service sshd start`
+- `chkconfig`
+  * E.g.:
+    - `chkconfig sshd`
+    - `chkconfig --list sshd`
+    - `chkconfig --level 3 on`
 
 ## 60. Managing Services with SystemD
+- `systemctl`
+  * on boot settings
+    - `enable`
+    - `disable`
+  * current settings
+    - `start`
+    - `stop`
+    - `status`
