@@ -1,5 +1,14 @@
 # Explain Linux Kernel and Boot Concepts
 
+## 01. BIOS and UEFI
+- BIOS
+  - Basic Input Output System
+  - older
+
+- UEFI
+  - Unified Extensible Firmware Interface
+  - newer
+
 ## 02. Difference between GRUB, and GRUB2
 in `/boot/grub`
 GRUB uses: `menu.lst`, `grub.conf`
