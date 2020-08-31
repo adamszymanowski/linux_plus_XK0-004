@@ -4,10 +4,16 @@
 - BIOS
   - Basic Input Output System
   - older
+  - uses MBR (Master Boot Record)
 
 - UEFI
   - Unified Extensible Firmware Interface
   - newer
+  - has a specialized partition for booting
+    - supports way more partitions
+    - supports Secure Boot
+
+  UEFI is a replacement for BIOS.
 
 ## 02. Difference between GRUB, and GRUB2
 in `/boot/grub`
