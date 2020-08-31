@@ -16,11 +16,24 @@
   UEFI is a replacement for BIOS.
 
 ## 02. Difference between GRUB, and GRUB2
-in `/boot/grub`
-GRUB uses: `menu.lst`, `grub.conf`
-GRUB2 uses just: `grub.cfg`
+Grand Unified Bootloader
 
-GRUB2: `grub.cfg`, hidden menu, can boot from iso
+- GRUB
+  - legacy 
+  - in `/boot/grub` directory there are
+    - `menu.lst`
+    - `grub.conf`
+  - difficult to modify
+  - boot menu usually displays on boot
+
+- GRUB2
+ - newer
+ - in `/boot/grub` directory there is just
+    - `grub.cfg`
+- can boot from ISO, USB, UUID, device
+- customizable in `/etc/default/grub`
+- hidden boot menu (press shift!)
+- `sudo update-grub`
 
 
 ## 03. Boot file locations
