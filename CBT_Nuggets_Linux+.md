@@ -93,9 +93,16 @@ Common causes of kernel panic:
 - overclocked CPU
 
 ## 07. Loading Kernel Modules on Boot
+Linux kernel is almost always good at loading modules automatically, but sometimes you need to load them manually,
+or tell which ones not to load.
+
 - `/etc/modules` - for manual entries on what to load
+  * also loads dependencies automatically
+  * .. but if wrong version is loaded automatically, we can blacklist it
+
 - `/etc/modprobe.d/blacklist.conf` - for manual blacklisting
-By blacklisting a kernel module, we esnusre the Linux system won't automatically load it
+
+By blacklisting a kernel module, we ensure the Linux system won't automatically load it
 as a dependency of another module
 
 ## 08. Manipulating Kernel Modules
