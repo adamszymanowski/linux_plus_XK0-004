@@ -33,26 +33,22 @@ Grand Unified Bootloader
 - can boot from ISO, USB, UUID, device
 - customizable in `/etc/default/grub`
 - hidden boot menu (press shift!)
-- `sudo update-grub`
+
 
 
 ## 03. Boot file locations
-`/etc/default`
+* Debian
+after changes in `/etc/default/grub` file run `update-grub` to update the actual boot file `/boot/grub`
 
-Debian
-`/boot/grub`
-```
-$ update-grub
-```
+* RedHat
+after changes in `/etc/default/grub` file run `grub2-mkconfig -o /etc/grub2.cfg` to update the actual boot file `/etc/grub2.cfg`
 
-RedHat
-`/boot/grub2`
-```
-$ grub2-mkconfig -o /etc/grub2.cfg
-```
+No matter what distribution,
+
+look around `vi /etc/grub2.cfg`, `ls -l /etc/grub*`, and so on... to see what's going on.
 
 DO NOT edit directly
-`grub.cfg`
+`grub.cfg` or `grub2.cfg`
 
 
 ## 04. Boot Methods
