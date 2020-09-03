@@ -87,7 +87,9 @@ Generic stripped down version of Linux kernel is stored in:
 ## 06. Kernel Panic
 Common causes of kernel panic:
 - bad RAM
+  * remove one stick at a time to eliminate the bad one
 - Corrupt kernel update
+  * use previous kernel version (use GRUB) and fix  stuff
 - overclocked CPU
 
 ## 07. Loading Kernel Modules on Boot
