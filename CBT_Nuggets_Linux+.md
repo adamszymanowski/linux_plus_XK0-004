@@ -65,8 +65,24 @@ DO NOT edit directly
 
 
 ## 05. Boot Modules and Files
-- `initrd` - initialize RAM disk
-- `initramfs` - (object stored inside kernel) - file system for krenel - not used after boot
+```
+                                                      module
+                                                        |
+BIOS/UEFI ---> GRUB/GRUB2 ---> vmlinux/vmlinuz ---> full kernel - module
+                            |              |            |
+                          initrd          initranFS   module
+                                          [dracut]    
+```
+Generic stripped down version of Linux kernel is stored in:
+- `vmlinux` - kernel file
+- `vmlinuz` - same kernel file, but compressed
+
+- `initrd` - initialize RAM disk 
+  * just enough driver and module information, to be able to have the Linux kernel access file system,
+  so that it can get to its modules
+  * temporary staging, not used after boot
+
+- `initramfs` - object stored inside kernel - file system in RAM for kernel
 
 ## 06. Kernel Panic
 Common causes of kernel panic:
