@@ -52,8 +52,17 @@ DO NOT edit directly
 
 
 ## 04. Boot Methods
-PXE - Preboot Execution Environment
-GRUB2 ISO booting is specific to Linux
+- Hardware
+  * PXE - Preboot Execution Environment
+    - image stored on the newtork TFTP server
+  * iPXE - enchanced PXE
+    - more options, for example image can be downloaded over HTTP
+  * USB
+  * CD, HDD
+
+- Software
+  * ISO booting via GRUB2
+
 
 ## 05. Boot Modules and Files
 - `initrd` - initialize RAM disk
