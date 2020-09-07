@@ -130,11 +130,18 @@ Tools for managing modules
 # Configure nad Verify Network Connections
 
 ## 09. Testing Network Connectivity
+**PRO TIP 1**: always check the cable first
+
+
+Tools:
 - `ping`
 - `ip addr`
 - `ifconfig` (outdated)
 - `ip route`
 
+**PROTIP 2** `ip addr` first, and then `ping` your own address to see whether the network stack works
+
+**PROTIP 3** use `ip route` to see if defeult gateway is set, and maybe restart network adapter will help
 ## 10. Testnig DNS
 - `dig`
 - `nslookup`

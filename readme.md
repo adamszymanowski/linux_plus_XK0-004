@@ -8,7 +8,7 @@
 Skill | Modules
 ------|--------
 Explain Linux Kernel and Boot Concepts | 01-08
-Configure and Verify Network Connections | 09-xx  
+Configure and Verify Network Connections | 09-15  
 
 # References for Exam Objectives
 - (UALSAH) - Unix and Linux System Administration Handbook - fifth edition
