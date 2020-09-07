@@ -106,12 +106,19 @@ By blacklisting a kernel module, we ensure the Linux system won't automatically 
 as a dependency of another module
 
 ## 08. Manipulating Kernel Modules
-Modules live in `/lib/modules/`
+Modules live in `/lib/modules/` (for each kernel version) `ls /lib/modules` 
 
 Tools for inserting modules
-- `insmod` - full path, no dependency check, fail without explanation
-- `modprobe` - just module name, dependency check, needs **map**
-modprobe is the frontend that uses insmod
+- `insmod` 
+  * full path
+  * no dependency check
+  * fail without explanation
+- `modprobe`
+  * just module name
+  * dependency check
+  * needs **map**
+
+`modprobe` is the frontend that uses `insmod`
 
 Tools for managing modules
 - `lsmod` - list inserted modules

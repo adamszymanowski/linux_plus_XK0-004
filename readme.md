@@ -1,6 +1,14 @@
 # Comptia Linux+ (XK0-004) Exam Study Notes
 - [Notes from CBT Nuggets Course](https://github.com/adamszymanowski/linux_plus_XK0-004/blob/master/CBT_Nuggets_Linux%2B.md)
+
+
+## Skills
 - TODO: Do flashcards for first module (01-08)
+
+Skill | Modules
+------|--------
+Explain Linux Kernel and Boot Concepts | 01-08
+Configure and Verify Network Connections | 09-xx  
 
 # References for Exam Objectives
 - (UALSAH) - Unix and Linux System Administration Handbook - fifth edition
