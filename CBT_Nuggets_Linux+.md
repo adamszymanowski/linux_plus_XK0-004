@@ -142,11 +142,15 @@ Tools:
 **PROTIP 2** `ip addr` first, and then `ping` your own address to see whether the network stack works
 
 **PROTIP 3** use `ip route` to see if defeult gateway is set, and maybe restart network adapter will help
-## 10. Testnig DNS
+## 10. Testing DNS
 - `dig`
+  * `dig @server host`
 - `nslookup`
+  * `nslookup host server`
 - `host`
+  * `host host server`
 
+**NOTE:** On minimal CentOS run `sudo yum install bind-utils`
 ## 11. Locating Common Network Configuration Files
 - `/etc/hosts`
 - `/etc/resolv.conf`
