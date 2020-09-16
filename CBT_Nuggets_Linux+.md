@@ -169,7 +169,7 @@ version check: `cat /etc/os-release`
 
 ## 13. Identifying Red Hat and CentOS Network Configuration Files
 - Network Manager
-- `/etc/sysconfig/newtork-scripts`
+- contents of `/etc/sysconfig/network-scripts` **NOTE:** no matter whether you use network manager or not, the settings are only in files here 
 
 ## 14. Network Bonding Modes
 Switch supported (L3 switches or smart switches) or generic
