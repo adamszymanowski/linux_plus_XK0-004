@@ -158,6 +158,8 @@ Consistent files accross the board (no matter which distribution)
 - `/etc/nsswitch.conf`- in `hosts:` section, `files` directive that tells the system to check `/etc/hosts` first for DNS resolution
 
 ## 12. Identifying Debian and ubuntu Network Configuration Files
+version check: `cat /etc/os-release`
+
 - `/etc/network/interfaces` (older version)
 - `/etc/netplan/*` (newer version)
   - `netplan apply`
