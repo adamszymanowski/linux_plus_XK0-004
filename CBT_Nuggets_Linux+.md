@@ -152,9 +152,10 @@ Tools:
 
 **NOTE:** On minimal CentOS run `sudo yum install bind-utils`
 ## 11. Locating Common Network Configuration Files
+Consistent files accross the board (no matter which distribution)
 - `/etc/hosts`
-- `/etc/resolv.conf`
-- `/etc/nsswitch.conf`
+- `/etc/resolv.conf` - we don't edit this directly, it's managed by a deamon (`systemmd-resolved` on Ubuntu)
+- `/etc/nsswitch.conf`- in `hosts:` section, `files` directive that tells the system to check `/etc/hosts` first for DNS resolution
 
 ## 12. Identifying Debian and ubuntu Network Configuration Files
 - `/etc/network/interfaces` (older version)
