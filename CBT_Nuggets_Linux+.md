@@ -207,12 +207,46 @@ Summary:
 
 ## 15. Configuring Bonded Network Interfaces
 - Ubuntu
-  - `/etc/netplan/*` (add bond config)
+  - `/etc/netplan/*` (add bond config in yaml configuration file, Example1 below)
+  - `ip addr` (check for bond)
   - `/proc/net/bonding/*` (check bond status)
 - CentOS
-  - `/etc/sysconfig/network-scripts` (add bond config)
-  - TODO: revisit this (!)  
+  - `/etc/sysconfig/network-scripts/*` (add bond config, `ifcfg-bond0`, see Example2 below)
+  - `ip addr` (check for bond)
 
+Example1:
+```
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: false
+  bonds:
+    bond0:
+      dhcp4: false
+      interfaces:
+        - eth0
+      addresses: [10.10.10.10/24]
+      gateway4: 10.10.10.1
+      parameters:
+        mode: active-backup
+      nameservers:
+        addresses: [8.8.8.8]
+```
+
+Example2:
+```
+DEVICE=bond0
+NAME=bond0
+BONDING MASTER=yes
+IPADDR=10.10.10.15
+PREFIX=24
+ONBOOT=yes
+BOOTPROTO=none
+BONDING_OPTS="mode=6 miimon=100"
+```
 
 
 # Manage Storage in Linux Environment
