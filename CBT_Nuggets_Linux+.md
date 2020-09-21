@@ -184,19 +184,26 @@ Mode | Description   | Need switch support?
 5    | balance-tlb   | No
 6    | balance alb   | No
 
-0. you need switch support *unless*
-you connect computer directy to computer
+0. you need switch support (with port aggregation) *unless* you connect computer directy to computer (server to server, for example)
 
 one-by-one packet sending in cycles
+
 1. if one port fails other takes over
-2. packet is directed by MAC addresses (sender-reciever)
-computed hash, mode 4 is better at that
-3. for very specific cases, all port get the same traffic
+2. packet is directed by computed hash of computer's MAC address, not very often used since mode 4 is better
+3. for very specific cases, all ports get the same traffic
+
 4. Industry standard for directing packets 
 **Highly recommended for switch that has support**
-5. Balances incomming traffic
-6. Balances incomming and outcomming traffic
+
+5. Balances incomming traffic (to least busy port)
+
+6. Balances incomming and outcomming traffic (to least busy port)
 **Highly recommended for switch without support**
+
+Summary:
+- 0 - Needs switch support unless directly connection two computers
+- 2,3,4 - Requires switch support
+- 1,5,6 - Does not require switch support
 
 ## 15. Configuring Bonded Network Interfaces
 - Ubuntu
