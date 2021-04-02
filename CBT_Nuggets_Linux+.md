@@ -1,6 +1,6 @@
 # Explain Linux Kernel and Boot Concepts
 
-## 01. BIOS and UEFI
+## 001. BIOS and UEFI
 - BIOS
   - Basic Input Output System
   - older
@@ -15,12 +15,12 @@
 
   UEFI is a replacement for BIOS.
 
-## 02. Difference between GRUB, and GRUB2
+## 002. Difference between GRUB, and GRUB2
 Grand Unified Bootloader
 
 - GRUB
   - legacy 
-  - in `/boot/grub` directory there are
+  - in `/boot/grub/` directory there are files:
     - `menu.lst`
     - `grub.conf`
   - difficult to modify
@@ -28,15 +28,15 @@ Grand Unified Bootloader
 
 - GRUB2
  - newer
- - in `/boot/grub` directory there is just
+ - in `/boot/grub/` directory there is just
     - `grub.cfg`
 - can boot from ISO, USB, UUID, device
-- customizable in `/etc/default/grub`
+- customizable in `/etc/default/grub` file
 - hidden boot menu (press shift!)
 
 
 
-## 03. Boot file locations
+## 003. Boot file locations
 * Debian
 after changes in `/etc/default/grub` file run `update-grub` to update the actual boot file `/boot/grub`
 
@@ -51,7 +51,7 @@ DO NOT edit directly
 `grub.cfg` or `grub2.cfg`
 
 
-## 04. Boot Methods
+## 004. Boot Methods
 - Hardware
   * PXE - Preboot Execution Environment
     - image stored on the newtork TFTP server
@@ -64,7 +64,7 @@ DO NOT edit directly
   * ISO booting via GRUB2
 
 
-## 05. Boot Modules and Files
+## 005. Boot Modules and Files
 ```
                                                       module
                                                         |
@@ -84,7 +84,7 @@ Generic stripped down version of Linux kernel is stored in:
 
 - `initramfs` - object stored inside kernel - file system in RAM for kernel
 
-## 06. Kernel Panic
+## 006. Kernel Panic
 Common causes of kernel panic:
 - bad RAM
   * remove one stick at a time to eliminate the bad one
@@ -92,7 +92,7 @@ Common causes of kernel panic:
   * use previous kernel version (use GRUB) and fix  stuff
 - overclocked CPU
 
-## 07. Loading Kernel Modules on Boot
+## 007. Loading Kernel Modules on Boot
 Linux kernel is almost always good at loading modules automatically, but sometimes you need to load them manually,
 or tell which ones not to load.
 
@@ -105,7 +105,7 @@ or tell which ones not to load.
 By blacklisting a kernel module, we ensure the Linux system won't automatically load it
 as a dependency of another module
 
-## 08. Manipulating Kernel Modules
+## 008. Manipulating Kernel Modules
 Modules live in `/lib/modules/` (for each kernel version) `ls /lib/modules` 
 
 Tools for inserting modules

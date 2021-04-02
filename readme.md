@@ -1,18 +1,21 @@
 # Comptia Linux+ (XK0-004) Exam Study Notes
 - [Notes from CBT Nuggets Course](https://github.com/adamszymanowski/linux_plus_XK0-004/blob/master/CBT_Nuggets_Linux%2B.md)
 
-
 ## Skills
-- TODO: Do flashcards for first module (01-08)
+- *DONE*: Do flashcards for first module (01-08)
+- TODO: Do flashcards for second module (09-15)
+
 
 Skill | Modules
 ------|--------
-Explain Linux Kernel and Boot Concepts | 01-08
-Configure and Verify Network Connections | 09-15  
+Explain Linux Kernel and Boot Concepts    | 001-008
+Configure and Verify Network Connections  | 009-015
+Manage Storage in Linux Environment       | 016-025   
 
-# References for Exam Objectives
+# References and Further Reading
 - (UALSAH) - Unix and Linux System Administration Handbook - fifth edition
-- TODO: Expand ont this and fill actual references
+- ArchLinux Wikipedia
+  * [Boot process](https://wiki.archlinux.org/index.php/Arch_boot_process)
 
 # Exam Objectives
 - [CompTIA Exam Objectives](https://www.comptia.jp/pdf/comptia-linux-xk0-004-exam-objectives.pdf)
