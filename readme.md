@@ -2,20 +2,21 @@
 - [Notes from CBT Nuggets Course](https://github.com/adamszymanowski/linux_plus_XK0-004/blob/master/CBT_Nuggets_Linux%2B.md)
 
 ## Skills
-- *DONE*: Do flashcards for first module (01-08)
-- TODO: Do flashcards for second module (09-15)
 
-
-Skill | Modules
-------|--------
-Explain Linux Kernel and Boot Concepts    | 001-008
-Configure and Verify Network Connections  | 009-015
-Manage Storage in Linux Environment       | 016-025   
+Skill | Modules | Flashcards
+------|---------|-----------
+Explain Linux Kernel and Boot Concepts      | 001-008 | *Done*
+Configure and Verify Network Connections    | 009-015 | *Done*
+Manage Storage in Linux Environment         | 016-025 | TODO
+Compare and Contrast Virtualization Methods | 026-031 | TODO  
 
 # References and Further Reading
 - (UALSAH) - Unix and Linux System Administration Handbook - fifth edition
 - ArchLinux Wikipedia
   * [Boot process](https://wiki.archlinux.org/index.php/Arch_boot_process)
+- IBM Docs
+  * [Network bonding modes](https://www.ibm.com/docs/en/linux-on-systems?topic=recommendations-bonding-modes)
+- [Network bonding modes in CentOS](https://www.thegeekdiary.com/what-are-the-network-bonding-modes-in-centos-rhel/)
 
 # Exam Objectives
 - [CompTIA Exam Objectives](https://www.comptia.jp/pdf/comptia-linux-xk0-004-exam-objectives.pdf)

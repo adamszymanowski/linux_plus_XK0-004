@@ -142,7 +142,8 @@ Tools:
 **PROTIP 2** `ip addr` first, and then `ping` your own address to see whether the network stack works
 
 **PROTIP 3** use `ip route` to see if defeult gateway is set, and maybe restart network adapter will help
-## 10. Testing DNS
+
+## 010. Testing DNS
 - `dig`
   * `dig @server host`
 - `nslookup`
@@ -151,27 +152,28 @@ Tools:
   * `host host server`
 
 **NOTE:** On minimal CentOS run `sudo yum install bind-utils`
-## 11. Locating Common Network Configuration Files
+
+## 011. Locating Common Network Configuration Files
 Consistent files accross the board (no matter which distribution)
 - `/etc/hosts`
 - `/etc/resolv.conf` - we don't edit this directly, it's managed by a deamon (`systemmd-resolved` on Ubuntu)
 - `/etc/nsswitch.conf`- in `hosts:` section, `files` directive that tells the system to check `/etc/hosts` first for DNS resolution
 
-## 12. Identifying Debian and ubuntu Network Configuration Files
+## 012. Identifying Debian and ubuntu Network Configuration Files
 version check: `cat /etc/os-release`
 
-- `/etc/network/interfaces` (older version)
+- `/etc/network/if-*` (older version)
 - `/etc/netplan/*` (newer version)
   - `netplan apply`
 - Network Manager (any version)
   - GUI
   - `nmtui` (console network manager)
 
-## 13. Identifying Red Hat and CentOS Network Configuration Files
+## 013. Identifying Red Hat and CentOS Network Configuration Files
 - Network Manager
-- contents of `/etc/sysconfig/network-scripts` **NOTE:** no matter whether you use network manager or not, the settings are only in files here 
+- contents of `/etc/sysconfig/network-scripts/ifcfg-*` **NOTE:** no matter whether you use network manager or not, the settings are only in files here 
 
-## 14. Network Bonding Modes
+## 014. Network Bonding Modes
 Switch supported (L3 switches or smart switches) or generic
 
 Mode | Description   | Need switch support?
@@ -182,7 +184,7 @@ Mode | Description   | Need switch support?
 3    | broadcast     | Yes
 4    | 802.3ad       | Yes
 5    | balance-tlb   | No
-6    | balance alb   | No
+6    | balance-alb   | No
 
 0. you need switch support (with port aggregation) *unless* you connect computer directy to computer (server to server, for example)
 
@@ -205,7 +207,7 @@ Summary:
 - 2,3,4 - Requires switch support
 - 1,5,6 - Does not require switch support
 
-## 15. Configuring Bonded Network Interfaces
+## 015. Configuring Bonded Network Interfaces
 - Ubuntu
   - `/etc/netplan/*` (add bond config in yaml configuration file, Example1 below)
   - `ip addr` (check for bond)
