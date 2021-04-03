@@ -7,7 +7,7 @@ Skill | Modules | Flashcards
 ------|---------|-----------
 Explain Linux Kernel and Boot Concepts      | 001-008 | *Done*
 Configure and Verify Network Connections    | 009-015 | *Done*
-Manage Storage in Linux Environment         | 016-025 | TODO
+Manage Storage in Linux Environment         | 016-025 | *Done*
 Compare and Contrast Virtualization Methods | 026-031 | TODO  
 
 # References and Further Reading

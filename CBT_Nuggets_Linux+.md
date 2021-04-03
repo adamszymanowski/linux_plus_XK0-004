@@ -257,7 +257,7 @@ BONDING_OPTS="mode=6 miimon=100"
 - MBR - Master Boot Record
   * Old system
   * Supports disks up to 2 TB and can have 4 partitions (without using extended partitions)
-- Protective MBR - The blank device that prevents older BIOS systems from assuming a GPT drive
+- Protective MBR - The blank device that prevents older BIOS systems from assuming a GPT drive is empty
 - GPT - GUID Partition table 
   * New system 
   * Supports much more space and partitions
@@ -267,7 +267,7 @@ BONDING_OPTS="mode=6 miimon=100"
 ## 17. Filesystem Hierarchy
 - `/` everything starts on **root directory**
 - virtual filesystem
-  - `/proc`, `/sys` belongs here
+  - `/proc/`, `/sys/` belongs here
   - dynamic files/pseudofiles that are managed by kernel
 - remote filesystem
   - NFS, SMB, or other
@@ -316,6 +316,7 @@ You can mount only on **empty folder**.
 Ways of mounting
 - manually
   * `mount`
+    - example: `mount -t ext4 /dev/sdb1 /mnt/10gig`
   * `umount` for unmountig
 - on boot
   * edit `/etc/fstab`
@@ -326,22 +327,23 @@ Ways of mounting
       * `options` use `defaults` for default config
       * `dump` deprecated, use 0
       * `pass` integrity check, root `/` directory should be 1, others (if needed) 2, for no check use 0
+    - use `blkid` for getting UUID
 
 ## 21. Checking and Scanning Linux Filesystems
 Steps to determine whether scan or not on boot
 - check `/etc/fstab` if the pass is set to 1 or 2
-  * scan if true
+  * try to scan (do next check) if true
 - check if the current mount count is higher than the allowed maximum count (if maximum count is -1 DO NOT scan)
   * scan if true
 - boot system and mount partitions
 
-Tool `tune2fs` allows to get/set the filesystem parameters (including maximum allowed count)
+Tool `tune2fs` allows to get/set the filesystem parameters (including maximum allowed count, -1 means DO NOT scan at all)
 
 root `/` directory cannot be scanned manually after the boot.
 For manual scanning boot the (other) system from USB/CD and use `fsck` on root `/` directory
 
 ## 22. Understanding LVM
-Physical Volumes (**PV**) are groupped in Volume Group (**VG**) which acts like a big 'chunk' 
+Physical Volumes (**PV**) are grouped in Volume Group (**VG**) which acts like a big 'chunk' 
 from which you 'carve out' Logical Volumes (**LV**) formatted with File Systems (**FS**).
 
 - `pvdisplay`
@@ -351,16 +353,15 @@ from which you 'carve out' Logical Volumes (**LV**) formatted with File Systems 
 - `pvcreate`
 - `vgcreate`
 - `lvcreate`
+- `lvextend`
 
 A physical volume can *NOT* be larger than the volume group it's a part of.
 
 ## 24. RAID Levels
-- RAID 0 (stripe)
-- RAID 1 (mirror)
-- RAID 5
-- RAID 6
-
-NOTE: (add flash cards to the topis above)
+- RAID 0 (stripe) split data across disks - no fault tolerance, but faster operation
+- RAID 1 (mirror) exact copy - fault tolerance: up to n-1 disks
+- RAID 5 block-level striping with distibuted parity - fault tolerance: 1 disk
+- RAID 6 block-level striping with distributed two parity blocks - fault tolerance: 2 disks
 
 ## 25. Configuring RAID Array with mdadm
 - `mdadm` tool for creating RAID
