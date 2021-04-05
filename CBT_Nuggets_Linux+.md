@@ -452,13 +452,14 @@ Cloud-init
   - `date`
   - `timedatectl` - shows the details about local time, universal time, rtc time, and time zone (also NTP and others)
   - `ls -l /etc/localtime` - shows symbolic link to timezone
-  - `ln -s /usr/share/zoneinfo/America/New_York` - set time zone (`rm /etc/localtime` first)
+  - `ln -s /usr/share/zoneinfo/America/New_York` - set time zone, but `rm /etc/localtime` first
 
 ## 33. Configuring Language and Localization Options
 - ASCII - American Standard for Computer Information Interchange
   * 7 bits
   * 128 characters
   * English language
+  
 - Unicode
   * characters for almost all languages
   * rules of rendering
@@ -470,8 +471,8 @@ Cloud-init
   - `localectl` - Control the system locale and keyboard layout settings
     * after changes in locale, you have to log out and back in to reestablish environment variables
 
-  
-NOTE: (Add flash cards to the topisc below)
+
+
 # Install, Update, and Configure Software
 
 ## 34. Installing Tarballs

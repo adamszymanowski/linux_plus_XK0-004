@@ -9,7 +9,7 @@ Explain Linux Kernel and Boot Concepts      | 001-008 | *Done*
 Configure and Verify Network Connections    | 009-015 | *Done*
 Manage Storage in Linux Environment         | 016-025 | *Done*
 Compare and Contrast Virtualization Methods | 026-031 | *Done*
-Configure Localization Options              | 032-033 | TODO
+Configure Localization Options              | 032-033 | *Done*
 Install, Update and Configure Software      | 034-039 | TODO 
 
 # References and Further Reading
