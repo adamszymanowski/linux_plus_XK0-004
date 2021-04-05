@@ -392,14 +392,15 @@ Oversimplification
   * basically a one .tar file renamed to .ova
 
 ## 28. Understanding Virtual Machine Networking
-- Networks - virtualized, but still acts like real
+- virtual networking - virtualized, but still acts like real
   * bridged 
     - shares connection with the host
-    - on the same network with the host
- * NAT
-    - just like connection in your home
+    - on the same network as the host
+  * NAT
+    - like private network through router (just like connection in your home)
     - host acts like a router 
- * local/private/host-only
+  * local/private/host-only
+    - VMs connected between themselves
     - not connected at all to external network 
     - isolated network
     - *ALTHOUGH* one of the VMs can have two (different) network connections, it's called
@@ -410,7 +411,7 @@ Oversimplification
 ## 29. Understanding Virtualization Storage Options
 - provisioning - reserving space on host's storage
  - thin - but using as much as needed, and growing to the needs
- - thick - but all at once upfront
+ - thick - all at once upfront
 
 - persistent volume - exists even if we destroy VM
 - blobs - storage through API, not a direct storage
@@ -430,7 +431,7 @@ Installation configuration files that "do" all the interaction during installati
 - Debian - **Preseed**, but also kickstart file
 
 Cloud-init 
-- bare-bones intstall from cloned image 
+- bare-bones install from cloned image 
 - then on initial boot runs customization scripts
 
 

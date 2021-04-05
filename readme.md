@@ -8,7 +8,9 @@ Skill | Modules | Flashcards
 Explain Linux Kernel and Boot Concepts      | 001-008 | *Done*
 Configure and Verify Network Connections    | 009-015 | *Done*
 Manage Storage in Linux Environment         | 016-025 | *Done*
-Compare and Contrast Virtualization Methods | 026-031 | TODO  
+Compare and Contrast Virtualization Methods | 026-031 | *Done*
+Configure Localization Options              | 032-033 | TODO
+Install, Update and Configure Software      | 034-039 | TODO 
 
 # References and Further Reading
 - (UALSAH) - Unix and Linux System Administration Handbook - fifth edition
@@ -17,6 +19,7 @@ Compare and Contrast Virtualization Methods | 026-031 | TODO
 - IBM Docs
   * [Network bonding modes](https://www.ibm.com/docs/en/linux-on-systems?topic=recommendations-bonding-modes)
 - [Network bonding modes in CentOS](https://www.thegeekdiary.com/what-are-the-network-bonding-modes-in-centos-rhel/)
+- [Virtual Networking](https://www.virtualbox.org/manual/ch06.html)
 
 # Exam Objectives
 - [CompTIA Exam Objectives](https://www.comptia.jp/pdf/comptia-linux-xk0-004-exam-objectives.pdf)
