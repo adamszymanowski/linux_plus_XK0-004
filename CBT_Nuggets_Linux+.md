@@ -487,6 +487,8 @@ Three step process
   - run script, E.g. `./install.sh`
   - move to appropreate directory E.g. `/usr/local/bin`
 
+  Not the best solution since automatic updates might not be possible.
+
 ## 35. Managaing .deb Packages
 - `apt`
   * newer
@@ -503,6 +505,7 @@ Three step process
 
 - `dpkg`
   * actual installer, but doesn't resolve dependencies
+  * example: `dpkg -i somepackage.deb`
 
 - `apt update` updates packages repositories, usyally you must run this before installation
 
@@ -514,6 +517,7 @@ Three step process
   * in Fedora, will replace YUM
 - RPM - RPM Package manager
   * low level tool, but doesn't handle dependencies
+  * example: `rpm -i somepackage.rpm`
 
 ## 37. Configuring APT Repositories
 Add repositories to this file:
@@ -526,19 +530,26 @@ but you need to add the GPG key too, for security reasons or else won't work (th
 Update with added key wil succeed
 - `apt update`
 
-Adding repositories throug PPA, E.g.
-- `add-apt-repository ppa:webupd8team/atom`
-* it adds repository, GPG key and update the sources all at once
+When adding repositories through PPA, E.g.`add-apt-repository ppa:webupd8team/atom`
+- Repository information is added to the sources.list (or sources.list.d) configuration
+- The "apt update" process is initiated
+- The GPG key for the repository is added to the system
+
 
 ## 38. Configuring YUM Repositiories
+YUM repositories be defined in:
 - `/etc/yum.conf`
-- `/etc/yum.repos.d/` folder with individual files in `<file>.repo`
-- add repo
-- edit config
+- `/etc/yum.repos.d/` folder with individual files `<file>.repo`
+Good practice: enable GPG check and add GPG key source
+
 
 ## 39. Identifying Non-RPM and Non-APT Package Managers
 - Arch Linux - `pacman`
+  * `pacman -h`
+  * `pacman -S` you don't *install* you **synchronize**
 - OpenSUSE - `zypper`
+  * `zypper -h`
+  * `zypper install` or `zypper in`
 
 
 
